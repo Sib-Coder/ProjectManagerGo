@@ -1,0 +1,23 @@
+version: "3"
+
+
+services:
+
+
+  database:
+    build: MySQL/
+    container_name: sqlmyDBsin
+    restart: always
+    environment:
+      MYSQL_USER: sibcoder
+      MYQSL_ROOT_PASSWORD: 210104Sib! 
+      MYSQL_ALLOW_EMPTY_PASSWORD : 210104Sib!
+    ports:
+      - 3306:3306
+    volumes:
+      - ./MySQL/script.sql:/docker-entrypoint-initdb.d/script.sql
+
+  backend:
+    build: BackEnd/
+    ports:
+      - 3001:3001

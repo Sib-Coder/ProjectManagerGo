@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Информация моих задачах</title>
+
+        <!-- Bootstrap style start -->
+        <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+        <!-- Bootstrap style end -->
+
+        <!-- Page style start -->
+        <link rel="stylesheet" href="../static/css/info.css">
+        <!-- Page style end -->
+    </head>
+    <body>
+        <div class="container">
+            <!-- NavBABABABr start -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                <a class="navbar-brand" href="../">SiParrots</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../">Список проектов</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../calendar">Общий календарь</a>
+                        </li>
+
+                    </ul>
+                    {{ if .admin }}
+                    <div class="d-flex mx-2">
+                        <a href="../all_users" class="btn btn-lg btn-primary btn-block">Все пользователи</a>
+                    </div>
+                    <div class="d-flex mx-2">
+                        <a href="../new_person" class="btn btn-lg btn-primary btn-block" name="exit">Новый пользователь</a>
+                    </div>
+                    {{ end }}
+                    <div class="d-flex">
+                        <button id="exit" class="btn btn-lg btn-primary btn-block" type="button">Выход</button>
+                    </div>
+                </div>
+                </div>
+            </nav>
+            <!-- NavBABABABr end -->
+
+
+            {{ range .tasks }}
+                <div class="row position-relative border border-2 border-secondary rounded-3 m-1">
+                    <div class="col-2">
+                        {{ .Project_name }}
+                    </div>
+                    <div class="col-2">
+                        {{ .Start }} - {{ .End }}
+                    </div>
+                    <div class="col-2">
+                        {{ .Title }}
+                    </div>
+                    <div class="col-6">
+                        <p>{{ .Text }}</p>
+                    </div>
+                    <a href="{{ .Url }}" class="stretched-link"></a>
+                </div>
+            {{ end }}
+        </div>
+    <!-- Bootstrap script start -->
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- Bootstrap script end -->
+        <!-- JQuery script start -->
+        <script src="../../../static/js/jquery.min.js"></script>
+        <!-- JQuery script end -->
+        <script src="../static/js/logout.js"></script>
+    </body>
+</html>

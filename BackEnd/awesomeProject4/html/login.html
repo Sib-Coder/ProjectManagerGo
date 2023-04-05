@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Вход</title>
+
+        <!-- Bootstrap style start -->
+        <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <!-- Bootstrap style end -->
+
+        <!-- Page style start -->
+        <link rel="stylesheet" href="static/css/login.css">
+        <!-- Page style end -->
+        
+    </head>
+    <body>
+        <div class="text-center">
+            <form class="form-signin">
+                <h1 class="h3 mb-3 font-weight-normal">Пожалуйста авторизуйтесь</h1>
+
+                <div class="alert alert-danger" role="alert">
+                    Введён неверный логин или пароль.
+                </div>
+
+                <label for="inputLogin" class="sr-only">Логин</label>
+                <input type="text" id="inputLogin" class="form-control" placeholder="Ваш логин" required="" autofocus="">
+                <label for="inputPassword" class="sr-only">Пароль</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Пароль" required="">
+                <button class="btn btn-lg btn-primary btn-block" id="send" type="button">Вход</button>
+                <p class="mt-5 mb-3 text-muted">© 2022</p>
+            </form>
+        </div>
+
+        <!-- Bootstrap script start -->
+        <script src="static/js/bootstrap.min.js"></script>
+        <!-- Bootstrap script end -->
+
+        <!-- JQuery script start -->
+        <script src="static/js/jquery.min.js"></script>
+        <!-- JQuery script end -->
+        
+        <script src="static/js/login.js"></script>
+    </body>
+</html>
